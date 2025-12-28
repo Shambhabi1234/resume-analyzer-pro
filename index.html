@@ -2,23 +2,41 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Smart Resume Analyzer</title>
+  <title>Resume Analyzer Pro</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="container">
-    <h1>Smart Resume Analyzer</h1>
+<div class="container">
+  <h1>Resume Analyzer Pro</h1>
 
-    <textarea id="resume" placeholder="Paste your resume here..."></textarea>
-
-    <input type="text" id="job" placeholder="Enter Job Role (e.g. Software Engineer)">
-
-    <button onclick="analyze()">Analyze Resume</button>
-
-    <div class="result" id="result"></div>
+  <div class="card">
+    <h3>Upload Resume</h3>
+    <input type="file" id="resumeFile" accept=".pdf,.txt">
   </div>
 
-  <script src="script.js"></script>
+  <div class="card">
+    <h3>Job Description</h3>
+    <textarea id="jobDesc" placeholder="Paste job description here..."></textarea>
+  </div>
+
+  <button onclick="analyzeResume()">Analyze</button>
+
+  <div class="card hidden" id="resultCard">
+    <h3>Match Score</h3>
+    <div class="progress">
+      <div id="progressBar"></div>
+    </div>
+    <p id="scoreText"></p>
+
+    <h4>Matched Skills</h4>
+    <div id="matched"></div>
+
+    <h4>Missing Skills</h4>
+    <div id="missing"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
